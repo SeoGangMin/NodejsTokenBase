@@ -1,0 +1,12 @@
+{
+  "DB_OPTIONS":{
+    "connectionLimit" : 100
+    ,"host":"localhost"
+    ,"user":"root"
+    ,"password":"root1234"
+    ,"database":"startup101"
+    ,"debug":["ComQueryPacket"]
+    ,"connectTimeout":10000
+  }
+
+}

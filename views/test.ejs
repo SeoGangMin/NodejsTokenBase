@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=1,initial-scale=1,user-scalable=1" />
+	<title>LoopyStory | DashBoard</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+		function Ajax(url, method, data, token, succ){
+			$.ajax({
+	        type : method,
+	        url : url,
+					data : data,
+					//dataType : 'json',
+	        beforeSend : function(xhr){
+            //xhr.setRequestHeader("content-type", "text/html");
+						if(token){
+							xhr.setRequestHeader("access_token", token);
+						}
+	        },
+	        error: function(xhr, status, error){
+	            alert(error);
+	        },
+	        success : function(data){
+	            succ(data);
+	        }
+	    });
+		}
+		function submit(){
+      var account = $('input[name=account]').val();
+      var password = $('input[name=password]').val();
+
+      if(account == '' || password == '') return false;
+
+			var url = '/users/login';
+
+			var data = {
+				account : account
+				,password : password
+			};
+
+			Ajax(url, 'post', data, null, function(data){
+				alert(JSON.stringify(data));
+				var token = data['token'];
+				localStorage.setItem('token', token);
+			});
+		}
+
+		function apiSubmit(){
+			var name = $('input[name=name]').val();
+			if(name == '') return false;
+
+			var data = {
+				a : 1,
+				b : 2
+			};
+
+			var token = localStorage.token;
+
+			Ajax('/test', 'post', data, token, function(data){
+				alert(JSON.stringify(data));
+			});
+		}
+	</script>
+</head>
+<body>
+	<br><br><br><br>
+  	<div>account : <input type="text" name="account"/></div>
+  	<div>password : <input type="text" name="password"/></div>
+  	<button type="button" onclick="submit();">로그인</button>
+
+		<br><br>
+		<div>name : <input type="text" name="name"/></div>
+  	<button type="button" onclick="apiSubmit();">ApiTest</button>
+
+
+</body>
+</html>

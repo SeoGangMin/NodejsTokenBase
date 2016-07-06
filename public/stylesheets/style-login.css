@@ -1,0 +1,123 @@
+html,body{width:100%;height:100%}
+body {
+    font-family: FontAwesome,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container{
+  width:100%;
+  height:100%;
+  display:table;
+  position: relative;
+  background-image: url('/images/login_bg.jpg');
+  background-size: cover;
+
+}
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
+
+/* Custom Button Styles */
+
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: rgb(255,255,255);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    color: #333;
+    background-color: rgba(255,255,255,0.8);
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#loginForm {padding:10px;}
+#loginForm input {vertical-align:middle; text-align: center; font-weight:bold; font-size: 15px; -moz-border-radius:25px; -webkit-border-radius:25px;}
+#loginForm input[type="password"] {width:210px; color:#fff; padding:10px 55px 10px 20px; background:rgba(0,0,0,0.15); border:0px;}
+#loginForm input[type="submit"] {width:210px; color:#fff; padding:10px 20px 10px 20px; background:rgba(64, 96, 165,0.5); border:0px;}
+#loginForm input[type="submit"]:hover {background:rgba(64, 96, 165,1);}
+#loginForm input:focus{border:0px;}
+#loginForm button {width:40px; margin-left:-47px; padding:8px; border:none; font-size: 15px; color:#4060A5; background: transparent; text-shadow:0px -1px 2px rgba(0,0,0,0.15);cursor:pointer;-moz-border-radius:6px; -webkit-border-radius:6px;}
+#loginForm button::-moz-focus-inner {border:0;}
+#loginForm button:focus {border: 0px;}
+
+#loginForm input::-webkit-input-placeholder {
+   color: #fff;
+   font-size: 15px;
+   font-weight: 100;
+}
+
+#loginForm input:-moz-placeholder { /* Firefox 18- */
+   color: #fff;
+   font-size: 15px;
+   font-weight: 100;
+}
+
+#loginForm input::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;
+   font-size: 15px;
+   font-weight: 100;
+}
+
+#loginForm input:-ms-input-placeholder {
+   color: #fff;
+   font-size: 15px;
+   font-weight: 100;
+}
